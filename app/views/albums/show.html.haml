@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @album.title
+%p
+  %b Description:
+  = @album.description
+%p
+  %b Gallery:
+  = @album.gallery
+
+= link_to 'Edit', edit_album_path(@album)
+\|
+= link_to 'Back', albums_path
