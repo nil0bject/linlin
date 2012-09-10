@@ -1,15 +1,31 @@
+- column_width = 300
+- column_padding = 10
+- column_margin = 10
+- photo_padding = 10
+- photo_margin = 10
+
 %p#notice= notice
+- if params[:gallery_id] == "picasa"
+  - @photos.each_slice((@photos.count/3)+1) do |photo_slice|
+    %div{:style=>"float:left; background:#b4b4b4; width:#{column_width}px;"}
+      - photo_slice.each do |photo|
+        %div{:class=>"photo", :id=>photo.id, :style=>"width:#{column_width-(photo_padding+photo_margin)-(column_padding+column_margin)}px; margin:#{photo_margin}px; padding:#{photo_padding}px" }
+          = link_to image_tag(photo.media.thumbnails[2].url, :style=>"width:#{column_width-(photo_padding+photo_margin)-(column_padding+column_margin)}px"), photo.links[1].href
+          %br
+          = photo.media.description["__content__"] if photo.media.description
+          
+      
+- else
+  %p
+    %b Title:
+    = @album.title
+  %p
+    %b Description:
+    = @album.description
+  %p
+    %b Gallery:
+    = @album.gallery
 
-%p
-  %b Title:
-  = @album.title
-%p
-  %b Description:
-  = @album.description
-%p
-  %b Gallery:
-  = @album.gallery
-
-= link_to 'Edit', edit_album_path(@album)
-\|
-= link_to 'Back', albums_path
+  = link_to 'Edit', edit_album_path(@album)
+  \|
+= link_to 'Back', gallery_albums_path

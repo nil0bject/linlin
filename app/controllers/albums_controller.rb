@@ -13,11 +13,22 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
-    @album = Album.find(params[:id])
+    if params[:gallery_id] == "picasa"
+      client = Picasa::Client.new(user_id: "olivelinlin@gmail.com")
+      @photos = client.album.show(params[:id]).photos
+
+      thumbnails = []
+      @photos.each do |photo|
+        thumbnails << photo.media.thumbnails[1].url
+      end
+      # => Picasa::Presenter::AlbumList
+    else
+      @album = Album.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @album }
+      format.json { render json: params[:gallery_id] == "picasa" ? thumbnails : @album }
     end
   end
 

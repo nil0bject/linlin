@@ -1,11 +1,11 @@
 Portfolio::Application.routes.draw do
   root :to => 'galleries#index'
 
-  resources :images
-
-  resources :albums
-
-  resources :galleries
+  resources :galleries do
+    resources :albums do
+      resources :images
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,7 +13,13 @@ class GalleriesController < ApplicationController
   # GET /galleries/1
   # GET /galleries/1.json
   def show
-    @gallery = Gallery.find(params[:id])
+    if params[:id] == "picasa"
+      @client = Picasa::Client.new(user_id: "olivelinlin@gmail.com")
+      @albums = @client.album.list.albums
+      # => Picasa::Presenter::AlbumList
+    else
+      @gallery = Gallery.find(params[:id])
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,4 +1,5 @@
 class Album < ActiveRecord::Base
   belongs_to :gallery
-  attr_accessible :description, :title
+  has_many :images
+  attr_accessible :description, :title, :gallery
 end

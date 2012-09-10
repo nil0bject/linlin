@@ -38,6 +38,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'haml'
+gem 'picasa'
 
 group :development do
   gem 'haml-rails'

@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="body">
+  <div class="main_frame top" ></div>
+  <div id="main">
+    <%#= image_tag "title.png" %>
+    <%= yield %>
+  </div>
+  <div class="main_frame bottom" ></div>
+</div>
 
 </body>
 </html>
