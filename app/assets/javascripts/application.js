@@ -12,3 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+$("*").css('visibility','visible').fadeIn('slow');

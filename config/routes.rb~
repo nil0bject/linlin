@@ -1,5 +1,5 @@
 Portfolio::Application.routes.draw do
-  root :to => 'galleries#show', :defaults => { :id => "picasa" }
+  root :to => 'galleries#index'
 
   resources :galleries do
     resources :albums do

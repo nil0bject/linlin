@@ -16,6 +16,7 @@ class GalleriesController < ApplicationController
     if params[:id] == "picasa"
       @client = Picasa::Client.new(user_id: "olivelinlin@gmail.com")
       @albums = @client.album.list.albums
+      @albums.delete(@albums.first)
       # => Picasa::Presenter::AlbumList
     else
       @gallery = Gallery.find(params[:id])

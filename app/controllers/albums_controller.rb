@@ -17,10 +17,10 @@ class AlbumsController < ApplicationController
       client = Picasa::Client.new(user_id: "olivelinlin@gmail.com")
       @photos = client.album.show(params[:id]).photos
 
-      thumbnails = []
-      @photos.each do |photo|
-        thumbnails << photo.media.thumbnails[1].url
-      end
+      # thumbnails = []
+      # @photos.each do |photo|
+      #   thumbnails << photo.media.thumbnails[1].url
+      # end
       # => Picasa::Presenter::AlbumList
     else
       @album = Album.find(params[:id])

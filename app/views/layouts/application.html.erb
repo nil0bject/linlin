@@ -5,17 +5,19 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <div id="body">
-  <div class="main_frame top" ></div>
   <div id="main">
-    <%#= image_tag "title.png" %>
+    <%= link_to image_tag("title.gif", :id => "title"), root_url, :id => "title" %>
     <%= yield %>
   </div>
-  <div class="main_frame bottom" ></div>
 </div>
+
+
 
 </body>
 </html>
