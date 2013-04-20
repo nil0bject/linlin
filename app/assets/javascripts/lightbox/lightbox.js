@@ -177,7 +177,7 @@ lightbox = new Lightbox options
         }
       }
       $window = $(window);
-      top = $window.scrollTop() + $window.height() / 10;
+      top = $window.scrollTop() + $window.height() / 15;
       left = $window.scrollLeft();
       $lightbox = $('#lightbox');
       $lightbox.css({
@@ -225,8 +225,14 @@ lightbox = new Lightbox options
       containerRightPadding = parseInt($container.css('padding-right'), 10);
       containerBottomPadding = parseInt($container.css('padding-bottom'), 10);
       containerLeftPadding = parseInt($container.css('padding-left'), 10);
-      newWidth = imageWidth + containerLeftPadding + containerRightPadding;
-      newHeight = imageHeight + containerTopPadding + containerBottomPadding;
+
+      newHeight = $(window).height()-150;
+      $container.css('height', newHeight-10);
+      $image = $lightbox.find('.lb-image');
+      $image.css('height', $container.height()-10).css('margin-bottom', '20px');
+
+      newWidth = $image.width()+20;
+
       if (newWidth !== oldWidth && newHeight !== oldHeight) {
         $outerContainer.animate({
           width: newWidth,

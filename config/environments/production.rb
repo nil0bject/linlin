@@ -15,7 +15,7 @@ Portfolio::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.precompile += %w( galleries/view.js )
+  # config.assets.precompile += %w( galleries/view.js )
   config.assets.compile = true
 
 
