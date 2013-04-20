@@ -229,9 +229,14 @@ lightbox = new Lightbox options
       newHeight = $(window).height()-150;
       $container.css('height', newHeight-10);
       $image = $lightbox.find('.lb-image');
-      $image.css('height', $container.height()-10).css('margin-bottom', '20px');
+      var oldImageHeight = $image.height();
+      var newImageHeight = $container.height()-10;
+      var newImageWidth = (newImageHeight/oldImageHeight)*$image.width();
+      $image.height(newImageHeight);
+      $image.width(newImageWidth);
+      $image.css('height', newImageHeight).css('width', newImageWidth).css('margin-bottom', '20px');
 
-      newWidth = $image.width()+20;
+      newWidth = newImageWidth+20;
 
       if (newWidth !== oldWidth && newHeight !== oldHeight) {
         $outerContainer.animate({
