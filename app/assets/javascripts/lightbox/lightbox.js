@@ -229,14 +229,15 @@ lightbox = new Lightbox options
       newHeight = $(window).height()-150;
       $container.css('height', newHeight-10);
       $image = $lightbox.find('.lb-image');
-      var oldImageHeight = $image.height();
+      //fix for safari. create tmp image to retrieve actaul image width and height
+      var t = new Image();
+      t.src = $image.attr("src");
+      var oldImageWidth = t.width;
+      var oldImageHeight = t.height;
       var newImageHeight = $container.height()-10;
-      var newImageWidth = (newImageHeight/oldImageHeight)*$image.width();
-      $image.height(newImageHeight);
-      $image.width(newImageWidth);
-      $image.css('height', newImageHeight).css('width', newImageWidth).css('margin-bottom', '20px');
-
+      var newImageWidth = (newImageHeight/oldImageHeight)*oldImageWidth;
       newWidth = newImageWidth+20;
+      $image.css('height', newImageHeight).css('width', newImageWidth).css('margin-bottom', '20px');
 
       if (newWidth !== oldWidth && newHeight !== oldHeight) {
         $outerContainer.animate({
