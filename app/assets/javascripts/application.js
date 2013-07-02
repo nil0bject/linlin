@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-  $("*").css('visibility','visible').fadeIn(10000);
-
   $("a[href='#top_link']").click(function() {
     $("html, body").animate({ scrollTop: 0 }, 1000);
     console.log("scrolled");

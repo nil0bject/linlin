@@ -10,7 +10,7 @@
     %div{:style=>"float:left; background:#b4b4b4; width:#{column_width}px;"}
       - photo_slice.each do |photo|
         %div{:class=>"photo", :id=>photo.id, :style=>"width:#{column_width-(photo_padding+photo_margin)-(column_padding+column_margin)}px; margin:#{photo_margin}px; padding:#{photo_padding}px" }
-          = link_to image_tag(photo.media.thumbnails[2].url, :style=>"width:#{column_width-(photo_padding+photo_margin)-(column_padding+column_margin)}px"), photo.content.src, :rel=>"lightbox[album]"
+          = link_to image_tag(photo.media.thumbnails[2].url, :style=>"width:#{column_width-(photo_padding+photo_margin)-(column_padding+column_margin)}px"), photo.content.src+"?imgmax="+photo.width.to_s, :rel=>"lightbox[album]"
           %br
           = photo.media.description["__content__"] if photo.media.description
   #top_link{:style=>"clear:both;padding-top:50px;padding-left:25px"}

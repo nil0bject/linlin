@@ -2,15 +2,15 @@ var thumbnails = [];
 
 $(document).ready(function() {
   //position album divs
-
+  var hover_sound = new Audio();
 
   $(".album .thumbnail").hover(
     function () {
       var preloads = $(this).attr('data-thumbnails').split(',');
 
       for(var x=0;x<preloads.length;x++) {
-          thumbnails[x] = new Image()
-          thumbnails[x].src = preloads[x]
+          thumbnails[x] = new Image();
+          thumbnails[x].src = preloads[x];
       }
 
       //create dividers
@@ -34,7 +34,6 @@ $(document).ready(function() {
 function divider_hover(divider) {
     var divider_id = divider.attr('id');
     var album_border = divider.siblings('.border');
-    console.log(album_border);
     var album_thumb = album_border.find('img');
     var numphotos = divider.parent().parent().attr('numphotos');
     album_thumb.stop(true, true).fadeTo(0, 0.6);
