@@ -44,5 +44,7 @@ gem 'spring',        group: :development
 gem 'haml-rails'
 # picasas to access images and albums from picasa
 gem 'picasa'
+# heroku logs
+gem 'rails_12factor', group: :production
 
 ruby '2.1.1'
