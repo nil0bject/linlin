@@ -48,9 +48,7 @@
     // that contain 'lightbox'. When these are clicked, start lightbox.
     Lightbox.prototype.enable = function() {
       var self = this;
-      $(document).on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
-        self.$overlay.appendTo('body');
-        self.$lightbox.appendTo('body');
+      $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(event) {
         self.start($(event.currentTarget));
         return false;
       });
