@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require lightbox/lightbox.js
 //= require_tree .
 
 $("a[href='#top_link']").click(function() {
