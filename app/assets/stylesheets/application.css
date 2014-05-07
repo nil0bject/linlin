@@ -112,7 +112,7 @@ div#main {
   font-weight: bold;
   text-align: center;
   padding-top: 10px;
-  -webkit-font-smoothing: none;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .album .thumbnail {
