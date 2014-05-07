@@ -81,6 +81,7 @@ div#main {
   float:left;
   background: rgb(255, 255, 255) url(album_texture.png) repeat scroll top left;
   height: 320px;
+  width: 270px;
   padding: 1% 1% 0% 1%;
   margin: 0% 0.5% 0% 0.5%;
   font-family: 'Montserrat Subrayada', sans-serif;
