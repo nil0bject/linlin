@@ -75,10 +75,17 @@ div#main {
   box-shadow: 0 1px 3px rgba(34,25,25,0.4);
   -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
   -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
-  font-family: 'Monaco', sans-serif;
-  font-size: 10pt;
+}
+
+.photo .description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 11pt;
   font-weight: bold;
-  color: rgb(192, 188, 155);
+  color: rgb(163, 163, 163);
+  text-shadow: 0 0 0 black;
+  line-height: 1em;
 }
 
 .album {
