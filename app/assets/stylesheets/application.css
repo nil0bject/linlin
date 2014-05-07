@@ -29,6 +29,11 @@ p#contact {
   font-size: 11pt;
  }
 
+ P#contact a {
+  color: #8ad459;
+  text-decoration: none;
+ }
+
 img#title {
   margin-left:32px;
   margin-bottom: 10px;
