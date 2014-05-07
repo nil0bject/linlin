@@ -15,7 +15,10 @@
  *= require_tree .
  *= require_self
  */
- 
+body {
+  background: #222222 url(/assets/lightbox/bg-checker.png);
+}
+
 p#contact {
   margin-left: 100px;
   padding-top: 32px;
