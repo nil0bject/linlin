@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= csrf_meta_tags %>
+  <title>Linlin2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="body">
-  <div id="main">
-    <%= link_to image_tag("title.gif", :id => "title"), root_url, :id => "title" %>
-    <%= yield %>
+
+  <div id="body">
+    <div id="main">
+      <%= link_to image_tag("title.gif", :id => "title"), root_url, :id => "title" %>
+      <%= yield %>
+    </div>
   </div>
-</div>
 
-
-  <%= javascript_include_tag "application" %>
 </body>
 </html>
