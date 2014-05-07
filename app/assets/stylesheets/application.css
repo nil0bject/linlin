@@ -95,9 +95,14 @@ div#main {
   width: 270px;
   padding: 1% 1% 0% 1%;
   margin: 0% 0.5% 0% 0.5%;
-  font-family: 'Montserrat Subrayada', sans-serif;
-  font-size: 12pt;
-  font-weight: bold;
+}
+
+.album .description {
+  font-family: 'Pacifico', cursive;
+  /*font-family: 'Montserrat Subrayada', sans-serif;*/
+  font-size: 18pt;
+  font-weight: 0;
+  text-align: center;
 }
 
 .album .thumbnail {

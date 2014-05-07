@@ -18,7 +18,8 @@
         %div{:class=>"thumbnail", :style=>"background:none; ", "data-thumbnails"=> thumbnails.join(',') }
           %div{:class=>"border", :style=>""}
             = link_to image_tag(album.media.thumbnails[0].url), "/galleries/picasa/albums/#{album.id}"
-        = link_to "#{album.title}(#{album.numphotos})", "/galleries/picasa/albums/#{album.id}"
+        %div.description
+          = link_to "#{album.title}(#{album.numphotos})", "/galleries/picasa/albums/#{album.id}"
         - if album.summary
           %br
             = album.summary
