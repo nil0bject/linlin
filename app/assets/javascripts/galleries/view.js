@@ -2,8 +2,6 @@ var thumbnails = [];
 
 $(document).ready(function() {
   //position album divs
-  var hover_sound = new Audio();
-
   $(".album .thumbnail").hover(
     function () {
       var preloads = $(this).attr('data-thumbnails').split(',');
@@ -19,15 +17,15 @@ $(document).ready(function() {
       var height = $(this).height();
       console.log('style="height:'+height+'px;width:'+width+'px;');
       for (i=0; i<numphotos; i++) {
-        $(this).append('<div id="'+i+'" class="divider" onclick="window.location=$(this).parent().siblings(\'a\').attr(\'href\');" onmouseover="divider_hover($(this));" style="float:left;position:absolute; top:'+$(this).position().top+'px; left:'+(width*i+$(this).position().left)+'px; height:'+height+'px;width:'+width+'px;"></div>');
+        $(this).append('<div id="'+i+'" class="divider" onclick="window.location=$(this).siblings(\'.border\').children(\'a\').attr(\'href\');" onmouseover="divider_hover($(this));" style="float:left;position:absolute; top:'+$(this).position().top+'px; left:'+(width*i+$(this).position().left)+'px; height:'+height+'px;width:'+width+'px;"></div>');
       }
-    }, 
+    },
     function () {
       $(this).find(".divider").remove();
     }
   );
-  
-  
+
+
 
 });
 
